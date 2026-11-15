@@ -101,7 +101,7 @@ uint64_t computeTruthTable_rec(Abc_Obj_t * pObj, const Lsv_Cut_t& cut,
     // 1. 檢查是否已經抵達 Cut 的邊界 (Cut 內的節點即為輸入變數)
     for (size_t i = 0; i < cut.size(); ++i) {
         if (Abc_ObjId(pObj) == cut[i]) {
-            return masks[i]; // 回傳對應的魔法遮罩
+            return masks[cut.size() - 1 - i]; // cut 中第一個節點是 MSB（最高位變數）
         }
     }
     
