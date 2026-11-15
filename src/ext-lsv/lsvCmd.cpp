@@ -16,12 +16,14 @@ typedef std::vector<Lsv_Cut_t> Lsv_CutSet_t;
 static int Lsv_CommandPrintNodes(Abc_Frame_t* pAbc, int argc, char** argv);
 static int Lsv_CommandCutTt(Abc_Frame_t* pAbc, int argc, char** argv);
 static int Lsv_CommandCutBdd(Abc_Frame_t* pAbc, int argc, char** argv);
+int Lsv_CommandKlFlex(Abc_Frame_t* pAbc, int argc, char** argv);   // PA2 (lsvKlFlex.cpp)
 
 // ==================== 以下為助教原始架構 (請勿更動) ====================
 void init(Abc_Frame_t* pAbc) {
   Cmd_CommandAdd(pAbc, "LSV", "lsv_print_nodes", Lsv_CommandPrintNodes, 0);
   Cmd_CommandAdd(pAbc, "LSV", "lsv_cut_tt", Lsv_CommandCutTt, 0); 
   Cmd_CommandAdd(pAbc, "LSV", "lsv_cut_bddsize", Lsv_CommandCutBdd, 0);
+  Cmd_CommandAdd(pAbc, "LSV", "lsv_kl_flex", Lsv_CommandKlFlex, 0);
 }
 
 void destroy(Abc_Frame_t* pAbc) {}
